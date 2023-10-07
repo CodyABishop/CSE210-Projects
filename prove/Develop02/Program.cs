@@ -22,13 +22,13 @@ class Program
                 int promptSelected = randomGenerator.Next(0, (promptsForWriting.Length - 1));
                 Entry newEntry = new Entry();
                 DateTime theCurrentTime = DateTime.Now;
-                newEntry.journalTime = theCurrentTime.ToShortDateString();
-                newEntry.promptText = promptsForWriting[promptSelected];
+                newEntry._journalTime = theCurrentTime.ToShortDateString();
+                newEntry._promptText = promptsForWriting[promptSelected];
                 Console.WriteLine(promptsForWriting[promptSelected]);
                 Console.WriteLine();
-                newEntry.Response = Console.ReadLine();
+                newEntry._response = Console.ReadLine();
                 Console.WriteLine();
-                currentJournal.entryList.Add(newEntry);
+                currentJournal._entryList.Add(newEntry);
                 Console.WriteLine("Added to Journal.");
                 
             } else if (userInput == 2){
@@ -39,9 +39,9 @@ class Program
                 string fileName = Console.ReadLine();
                 using (StreamWriter outputFile = new StreamWriter(fileName))
                 {
-                    foreach (Entry i in currentJournal.entryList)
+                    foreach (Entry i in currentJournal._entryList)
                     {
-                        outputFile.WriteLine(i.journalTime + "~|~" + i.promptText + "~|~" + i.Response);
+                        outputFile.WriteLine(i._journalTime + "~|~" + i._promptText + "~|~" + i._response);
                     }
                 }
 
@@ -53,10 +53,10 @@ class Program
                 {
                     Entry newEntry = new Entry();
                     string[] parts = line.Split("~|~");
-                    newEntry.journalTime = parts[0];
-                    newEntry.promptText = parts[1];
-                    newEntry.Response = parts[2];
-                    currentJournal.entryList.Add(newEntry);
+                    newEntry._journalTime = parts[0];
+                    newEntry._promptText = parts[1];
+                    newEntry._response = parts[2];
+                    currentJournal._entryList.Add(newEntry);
                 }
 
             }  else if (userInput == 0){

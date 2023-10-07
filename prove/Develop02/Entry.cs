@@ -2,14 +2,14 @@ using System;
 
 public class Entry
 {
-    public string journalTime;
-    public string promptText;
-    public string Response;
+    public string _journalTime;
+    public string _promptText;
+    public string _response;
 
-    public void displayEntry()
+    public void DisplayEntry()
     {
-        Console.WriteLine("Journal Entry of: " + journalTime);
-        Console.WriteLine("Prompt: " + promptText);
-        Console.WriteLine("Response: " + Response);
+        Console.WriteLine("Journal Entry of: " + _journalTime);
+        Console.WriteLine("Prompt: " + _promptText);
+        Console.WriteLine("Response: " + _response);
     }
 }

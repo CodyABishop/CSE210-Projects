@@ -3,14 +3,14 @@ using System.Collections.Generic;
 
 public class Journal
 {
-    public List<Entry> entryList = new List<Entry>();
+    public List<Entry> _entryList = new List<Entry>();
     public void Display()
     {
         int dispIterator = 0;
-        foreach (Entry i in entryList)
+        foreach (Entry i in _entryList)
         {
             Console.WriteLine("Entry #{0}", dispIterator++);
-            i.displayEntry();
+            i.DisplayEntry();
         }
     }
 }
